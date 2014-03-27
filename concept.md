@@ -6,13 +6,12 @@ The editor is block based like a terminal based editor.
 Each block is described by one unicode character and additional information all encoded as a single `long`.
 
 - 32 bit unicode code point
+- 8 bit decoration 1 index
+- 8 bit decoration 2 index
+- 6 bit foreground colour index
+- 6 bit background colour index
+- 3 bit font size
 - 1 bit underlined
-- 1 bit content flag (block represents editable content)
-- 1 bit action flag (block is an input element)
-- 6 bit foreground colour
-- 6 bit background colour
-- 8 bit decoration 1
-- 8 bit decoration 2
 
 A display has a fixed amount of vertical and horizontal blocks.
 One `long[]` stores the logical display. When e.g. scrolling the values in this array are changed. Another process takes care of visualising the blocks.
