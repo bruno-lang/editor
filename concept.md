@@ -6,11 +6,14 @@ The editor is block based like a terminal based editor.
 Each block is described by one unicode character and additional information all encoded as a single `long`.
 
 - 32 bit unicode code point
-- 8 bit decoration 1 index
-- 8 bit decoration 2 index
+- 2 bit font size
+- 7 bit decoration 1 index
+- 7 bit decoration 2 index
 - 6 bit foreground colour index
 - 6 bit background colour index
-- 3 bit font size
+- 1 bit bold
+- 1 bit italic
+- 1 bit strikethrough
 - 1 bit underlined
 
 A display has a fixed amount of vertical and horizontal blocks.
@@ -25,7 +28,7 @@ Decorations are all kind of shapes in addition to the block character itself lik
 - error markers (wave underline)
 - etc...
 
-A block refers to one out of 255 preset decorations by index. 0 index means no decoration.
+A block refers to one out of 127 preset decorations by index. 0 index means no decoration.
 
 ## Features
 - use a indexed colourset of e.g. 64 colours so that a 6 bit reference can encode a colour
